@@ -15,6 +15,8 @@ $berichten=getData($sql);
     <meta http-equiv="refresh" content="60">
 </head>
 <body>
+    <div class="vl"></div>
+    <div class="hl"></div>
     <div class="pagina" id="alles">
         <div class="top">
             <div class="kop links" id="links">
@@ -48,11 +50,13 @@ $berichten=getData($sql);
 <style>
     body {
         background-color: black;
-        color: white
+        color: white;
+
     }
     .pagina {
         width: 100%;
         height: 100%;
+        margin: 15px;
         font-family:'Arial';
         font-weight: bold;
     }
@@ -64,6 +68,7 @@ $berichten=getData($sql);
         background-color: light-green;
         top: 0;
         overflow-x: hidden;
+
     }
     .links {
         text-align:center;
@@ -75,7 +80,8 @@ $berichten=getData($sql);
     .rechts {
         right: 0;
         text-align: left;
-        
+        margin-top: 15px;
+        margin-left: 25px;
         font-size: 48px;
     }
     .tekstregels {
@@ -83,6 +89,21 @@ $berichten=getData($sql);
         line-height:1;
         z-index: 2;
         padding-top:45vh
+    }
+    .vl {
+        border-left: 6px solid white;
+        height: 40vh;
+        position: absolute;
+        left: 49%;
+        margin-left: -3px;
+        top: 0;
+    }
+    .hl {
+        position: absolute;
+        border-bottom: 6px solid white;       
+        height: 38vh;
+        width: 100%;   
+        margin-left: -3px;    
     }
 </style>
 <!-- Hieronder staat de JS functionaliteit -->
@@ -95,7 +116,7 @@ $berichten=getData($sql);
     var time = hours.slice(-2) + ":" + minutes.slice(-2);
     // Maandgetal naar maand
     const maandtekst=['Januari','Februari','Maart','April','Mei','Juni','Juli','Augustus','September','Oktober','November','December'];
-    var datum= d.getDate() + "-" + maandtekst[d.getMonth()];
+    var datum= d.getDate() + " - " + maandtekst[d.getMonth()];
     // Weekdaggetal naar dag
     const weekdag=["Zondag","Maandag","Dinsdag","Woensdag","Donderdag","Vrijdag","Zaterdag"];
     // Vul de locaties op het scherm
